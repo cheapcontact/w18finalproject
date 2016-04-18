@@ -3,7 +3,7 @@
 Core Questions: <br/>
 “What could this bike sharing business do with this data?” <br/>
 Overall bike usage <br/>
-Subscriber routine <br/>
+Subscriber routine *BRIAN* <br/>
 Customer routine <br/>
 Bike wear-and-tear <br/>
 Migration behavior <br/>
@@ -15,7 +15,7 @@ Are there times when it makes sense to shut down specific stations? <br/>
 How does usage change? “Do we make more money due to extended trips?” <br/>
 Do special events radically change business? How to accommodate? <br/>
 Business data <br/>
-Where do subscribers come from? <br/>
+Where do subscribers come from? *BRIAN* <br/>
 Should the company try other timing/pricing models to increase bike usage? Or to deal with peak hours? Should there be surge pricing? <br/>
 Do other businesses impact how people use bicycles? (Trader Joes/Whole Foods) <br/>
 Did a new company or a lapsed company impact behavior in any way? <br/>
