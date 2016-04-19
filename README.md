@@ -28,7 +28,7 @@ Are the locations correctly placed? <br/>
 Is there data the business is missing that could give it more agency over growth and success? <br/>
 
 Additional Resources: <br/>
-Mapping module for SF: https://pypi.python.org/pypi/gmplot/1.0.5 <br/>
+Mapping module for SF: https://pypi.python.org/pypi/gmplot/1.0.5 (SK: This doesn't appear to work with python3)<br/>
 Bicycle routes SF: https://data.sfgov.org/Transportation/SFMTA-Bikeway-Network/t6vv-tjkd <br/>
 Bicycle crash reports (2012): https://gist.github.com/pranavr/11348749 <br/>
 Event schedules: SF Giants <br/>
