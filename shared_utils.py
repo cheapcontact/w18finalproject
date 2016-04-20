@@ -44,3 +44,22 @@ def clean_zip_codes(df):
         return x
     df["Clean_Zip_Code"] = df.Zip_Code.map(replace_nonsense_value)
     
+
+
+def get_trip_counts_by_zip_code(trip_df):
+    df = trip_df.groupby("Clean_Zip_Code").filter(lambda x: x.name in SF_ZIP_CODES)
+    grouped = df.groupby("Clean_Zip_Code")
+    df = grouped.count().sort_values("Trip_ID", ascending=False)
+    df = df.reset_index()[["Clean_Zip_Code", "Trip_ID"]]
+    df.columns = ["Zip_Code", "Trip_Count"]
+    df.Zip_Code = [float(x) for x in df.Zip_Code]
+    df.set_index("Zip_Code", inplace=True)
+    return df
+
+
+def get_station_counts_by_zip_code(station_df):
+    df = station_df[station_df.Zip_Code.notnull()]
+    df = df.groupby("Zip_Code").count().reset_index()[["Zip_Code", "station_id"]]
+    df.columns = ["Zip_Code", "Station_Count"]
+    df.set_index("Zip_Code", inplace=True)
+    return df
