@@ -7,26 +7,23 @@ SF_ZIP_CODES = ["94102", "94103", "94104", "94105", "94107", "94108",
                 "94124", "94127", "94128", "94129", "94130", "94131",
                 "94132", "94133", "94134", "94143", "94158", "94188"]
 
-def read_trip_data(rename_columns=False, parse_dates=True):
+def read_trip_data(parse_dates=True):
     date_columns = ["Start Date", "End Date"] if parse_dates else None
-    return read_data("201508_trip_data.csv", rename_columns,
-                     date_columns)
+    return read_data("201508_trip_data.csv", date_columns)
 
 
-def read_station_data(rename_columns=False, parse_dates=True):
+def read_station_data(parse_dates=True):
     date_columns = ["installation"] if parse_dates else None
-    return read_data("201508_station_data.csv", rename_columns,
-                     date_columns)
+    return read_data("201508_station_data.csv", date_columns)
 
-def read_zip_code_data(rename_columns=False):
-    return read_data("zip_code_database.csv", rename_columns)
+def read_zip_code_data():
+    return read_data("zip_code_database.csv")
 
 
-def read_data(file_name, rename_columns=False, parse_dates=None):
+def read_data(file_name, parse_dates=None):
     '''Read in named data file'''
     df = pd.read_csv(file_name, parse_dates=parse_dates)
-    if rename_columns:
-        df.rename(columns=lambda x: x.replace(" ", "_"), inplace=True)
+    df.rename(columns=lambda x: x.replace(" ", "_"), inplace=True)
     return df
 
 
