@@ -56,10 +56,17 @@ def get_trip_counts_by_zip_code(trip_df):
     df.set_index("Zip_Code", inplace=True)
     return df
 
-
 def get_station_counts_by_zip_code(station_df):
     df = station_df[station_df.Zip_Code.notnull()]
     df = df.groupby("Zip_Code").count().reset_index()[["Zip_Code", "station_id"]]
     df.columns = ["Zip_Code", "Station_Count"]
     df.set_index("Zip_Code", inplace=True)
     return df
+
+def get_bike_counts_by_zip_code(station_df):
+    df = station_df[station_df.Zip_Code.notnull()][["dockcount","Zip_Code"]]
+    grouped = df.groupby("Zip_Code")
+    df = pd.DataFrame(grouped.dockcount.sum())
+    df.index = [int(x) for x in df.index]
+    return df
+
